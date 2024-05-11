@@ -1,6 +1,6 @@
 Users:
 1/
-POST http://localhost:port/api/users/register
+POST http://localhost:port/api/auth/register
 body: 
 {
   "name": "name111",
@@ -9,17 +9,17 @@ body:
 }
 
 2/
-POST http://localhost:port/api/users/login
+POST http://localhost:port/api/auth/login
 
 body: 
 {
-  "email": "111111@111111.net",
+  "email": "111@111.net",
   "password": "111111"
 }
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2M2UyOGQ4MzdhYzQwMjA2N2E0ZmQ4MyIsImlhdCI6MTcxNTM0OTc0NSwiZXhwIjoxNzE1MzUzMzQ1fQ.D2AMZVheKvxp_Yjn_vpBBBcoQtsvm_1cW8mQ6of61Z4
 
 3/
-POST http://localhost:port/api/users/logout
+POST http://localhost:port/api/auth/logout
 Headers
 Authorization: "Bearer token"
 
@@ -100,7 +100,7 @@ Body
   "email": "contact_email_1@111.com",
   "phone": "(111) 111-1111"
 }
-
+663fdc1351a4a141427a2fa5
 
 4/
 GET http://localhost:port/api/contacts/id
