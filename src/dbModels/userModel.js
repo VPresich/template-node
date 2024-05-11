@@ -1,28 +1,24 @@
 import mongoose from 'mongoose';
-import { EMAIL_PATTERN } from '../auxiliary/constants/patterns';
-import {
-  NAME_MSG,
-  EMAIL_MSG,
-  PASSWORD_MSG,
-} from '../auxiliary/constants/userMsg';
+import ptrn from '../auxiliary/constants/patterns.js';
+import userMsg from '../auxiliary/constants/userMsg.js';
 
 const userSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, NAME_MSG],
+      required: [true, userMsg.NAME_MSG],
     },
 
     email: {
       type: String,
-      required: [true, EMAIL_MSG],
+      required: [true, userMsg.EMAIL_MSG],
       unique: true,
-      match: EMAIL_PATTERN,
+      match: ptrn.EMAIL_PATTERN,
     },
 
     password: {
       type: String,
-      required: [true, PASSWORD_MSG],
+      required: [true, userMsg.PASSWORD_MSG],
     },
 
     subscription: {

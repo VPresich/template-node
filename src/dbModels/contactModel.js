@@ -1,20 +1,23 @@
 import mongoose from 'mongoose';
-import co from '../auxiliary/constants/userMsg';
+import contactMsg from '../auxiliary/constants/contactMsg.js';
+import ptrn from '../auxiliary/constants/patterns.js';
 
 const contactSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, userMsg.CONTACT_NAME_MSG],
+      required: [true, contactMsg.NAME_MSG],
     },
 
     phone: {
       type: String,
-      required: [true, userMsg.CONTACT_PHONE_MSG],
+      required: [true, contactMsg.PHONE_MSG],
+      match: ptrn.PHONE_PATTERN,
     },
 
     email: {
       type: String,
+      match: ptrn.EMAIL_PATTERN,
     },
 
     favorite: {

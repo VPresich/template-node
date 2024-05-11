@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import dbMsg from './auxiliary/constants/dbMsg';
+import dbMsg from '../src/auxiliary/constants/dbMsg.js';
 
 const DB_URI = process.env.DB_URI;
 mongoose

@@ -11,7 +11,12 @@ const EMPTY_BODY_MSG = 'Body must have at least one field';
 const ID_LENGTH_MSG = 'Id must be exactly 24 characters long';
 const ID_TYPE_MSG = 'Id must be a hexadecimal string';
 
-export default contactMsg = {
+const REMOVE_MSG = 'You are not authorized to remove this contact';
+const ACCESS_MSG = 'You are not authorized to access this contact';
+const UPDATE_MSG = 'You are not authorized to update this contact';
+const PAGE_NOTFOUND_MSG = 'Page not found';
+
+export default {
   NAME_MSG,
   NAME_EMPTY_MSG,
   PHONE_MSG,
@@ -20,4 +25,9 @@ export default contactMsg = {
   EMPTY_BODY_MSG,
   ID_LENGTH_MSG,
   ID_TYPE_MSG,
+
+  REMOVE_MSG,
+  ACCESS_MSG,
+  UPDATE_MSG,
+  PAGE_NOTFOUND_MSG,
 };
