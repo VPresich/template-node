@@ -24,6 +24,6 @@ app.use((err, req, res, next) => {
   res.status(status).json({ message });
 });
 
-app.listen(8080, () => {
-  console.log(appMsg.SERVER_SUCCESS_MSG);
+app.listen(process.env.PORT, () => {
+  console.log(appMsg.SERVER_SUCCESS_MSG + process.env.PORT);
 });
