@@ -38,6 +38,7 @@ const getContacts = ctrlWrapper(async (req, res, next) => {
   result.limit = limitNumber;
 
   result.contacts = await Contact.find({ ...query, owner: userId })
+    .populate('owner', '_id name email subscription')
     .limit(limitNumber)
     .skip(startIndex)
     .exec();
