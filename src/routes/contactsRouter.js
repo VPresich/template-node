@@ -12,38 +12,38 @@ contactsRouter.get('/', authMiddleware, ctrl.getContacts);
 
 contactsRouter.get(
   '/:id',
-  validateId(sch.idSchema),
   authMiddleware,
+  validateId(sch.idSchema),
   ctrl.getOneContact
 );
 
 contactsRouter.delete(
   '/:id',
-  validateId(sch.idSchema),
   authMiddleware,
+  validateId(sch.idSchema),
   ctrl.deleteContact
 );
 
 contactsRouter.post(
   '/',
-  validateBody(sch.createSchema),
   authMiddleware,
+  validateBody(sch.createSchema),
   ctrl.createContact
 );
 
 contactsRouter.put(
   '/:id',
+  authMiddleware,
   validateId(sch.idSchema),
   validateBody(sch.updateSchema),
-  authMiddleware,
   ctrl.updateContact
 );
 
 contactsRouter.patch(
   '/:id/favorite',
+  authMiddleware,
   validateId(sch.idSchema),
   validateBody(sch.updateFavoriteSchema),
-  authMiddleware,
   ctrl.updateFavoriteStatus
 );
 
