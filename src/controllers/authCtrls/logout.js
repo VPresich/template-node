@@ -3,7 +3,7 @@ import ctrlWrapper from '../../auxiliary/ctrlWrapper.js';
 
 const logout = ctrlWrapper(async (req, res) => {
   const { id } = req.user;
-  await User.findByIdAndUpdate(id, { token: '' });
+  await User.findByIdAndUpdate(id, { token: null });
   res.status(204).end();
 });
 
