@@ -1,4 +1,4 @@
-import { Schema, mongoose } from 'mongoose';
+import mongoose from 'mongoose';
 import contactMsg from '../auxiliary/constants/contactMsg.js';
 import ptrn from '../auxiliary/constants/patterns.js';
 
@@ -26,7 +26,7 @@ const contactSchema = new mongoose.Schema(
     },
 
     owner: {
-      type: Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
     },
   },
