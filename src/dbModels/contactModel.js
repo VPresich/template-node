@@ -33,4 +33,9 @@ const contactSchema = new mongoose.Schema(
   { versionKey: false, timestamps: true }
 );
 
+contactSchema.post('save', (err, data, next) => {
+  err.status = 400;
+  next();
+});
+
 export default mongoose.model('Contact', contactSchema);

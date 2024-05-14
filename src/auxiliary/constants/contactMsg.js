@@ -1,7 +1,7 @@
 const NAME_MSG = 'Set name for contact';
 const NAME_EMPTY_MSG = 'Contact name cannot be empty';
 
-const PHONE_MSG = 'Set name for contact';
+const PHONE_MSG = 'Set phone for contact';
 const PHONE_EMPTY_MSG = 'Contact phone cannot be empty';
 
 const FAVORITE_MSG = 'Set favorite for contact';
