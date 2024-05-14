@@ -23,7 +23,7 @@ app.use((err, req, res, next) => {
   const { status = 500, message = appMsg.SERVER_ERR_MSG } = err;
   res.status(status).json({ message });
 });
-
-app.listen(process.env.PORT, () => {
-  console.log(appMsg.SERVER_SUCCESS_MSG + process.env.PORT);
+const { PORT = 3000 } = process.env;
+app.listen(PORT, () => {
+  console.log(appMsg.SERVER_SUCCESS_MSG + PORT);
 });
