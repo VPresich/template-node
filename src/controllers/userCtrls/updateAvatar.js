@@ -1,13 +1,24 @@
 import User from '../../dbModels/userModel.js';
 import httpError from '../../auxiliary/httpError.js';
 import ctrlWrapper from '../../auxiliary/ctrlWrapper.js';
+import path from 'node:path';
+import fs from 'fs/promises';
 
-const updateSubscription = ctrlWrapper(async (req, res, next) => {
+const avatarsDir = path.resolve('public', 'avatars');
+
+const updateAvatar = ctrlWrapper(async (req, res, next) => {
   const { id } = req.user;
-  const { subscription } = req.body;
+
+  const { path: tempUpload, originalname } = req.file;
+  const fileName = `${id}${originalname}`;
+  const resultUpload = path.resolve(avatarsDir, fileName);
+
+  await fs.rename(tempUpload, resultUpload);
+  const avatarUrl = path.resolve('avatars', fileName);
+
   const updatedUser = await User.findByIdAndUpdate(
     id,
-    { subscription },
+    { avatarUrl },
     { new: true }
   );
   if (!updatedUser) {
@@ -21,4 +32,4 @@ const updateSubscription = ctrlWrapper(async (req, res, next) => {
   });
 });
 
-export default updateSubscription;
+export default updateAvatar;

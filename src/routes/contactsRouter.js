@@ -3,7 +3,6 @@ import validateBody from '../middlewares/validateBody.js';
 import validateId from '../middlewares/validateId.js';
 import sch from '../schemas/contactSchema/index.js';
 import ctrl from '../controllers/contactCtrls/index.js';
-
 import authMiddleware from '../middlewares/authMiddleware.js';
 
 const contactsRouter = express.Router();

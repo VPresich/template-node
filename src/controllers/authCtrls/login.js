@@ -26,8 +26,10 @@ const login = ctrlWrapper(async (req, res, next) => {
   res.status(200).json({
     token,
     user: {
+      name: user.subscription,
       email,
       subscription: user.subscription,
+      avatarUrl: user.subscription,
     },
   });
 });
